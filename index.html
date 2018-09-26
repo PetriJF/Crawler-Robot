@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Controlare Robot</title>
+	</head>
+	<style>
+		.button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 15px 25px;
+			text-align: center;
+			font-size: 16px;
+			cursor: pointer;
+			width: 150px;
+			margin: 25px;
+		}
+		.button:hover {
+			background-color: green;
+		}
+	</style>
+	<body>
+		<p style="font-size:32px">Controlarea robotului se face prin butoanele de mai jos:</p>
+		<br>
+		<form action="a.py" method="get">
+			<button class="button">Forward</button>
+		</form>
+		<form action="c.py" method="get">
+			<button class="button">Stop</button>
+		</form>
+		<form action="b.py" method="get">
+			<button class="button">Backward</button>
+		</form>
+	</body>
+</html>
