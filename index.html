@@ -2,6 +2,36 @@
 <html>
 	<head>
 		<title>Controlare Robot</title>
+
+		<script Language="Javascript">
+			var xmlhttp;
+			xmlhttp=new XMLHttpRequest();
+			function forward()
+			{
+				xmlhttp.open("GET","cgi-bin/forward.cgi",true);
+				xmlhttp.send();
+			}
+			<!-- function left()
+			{
+				xmlhttp.open("GET","cgi-bin/left.cgi",true);
+				xmlhttp.send();
+			}
+			function right()
+			{
+				xmlhttp.open("GET","cgi-bin/right.cgi",true);
+				xmlhttp.send();
+			}
+			function reverse()
+			{
+				xmlhttp.open("GET","cgi-bin/reverse.cgi",true);
+				xmlhttp.send();
+			}-->
+			function stop(event)
+			{
+				xmlhttp.open("GET","cgi-bin/stop.cgi",true);
+				xmlhttp.send();
+			}
+		</script>
 	</head>
 	<style>
 		.button {
@@ -22,10 +52,10 @@
 	<body>
 		<p style="font-size:32px">Controlarea robotului se face prin butoanele de mai jos:</p>
 		<br>
-
-		<button class="button" type="button" onclick="runPythonScript('a')">Forward</button>
-		<button class="button" type="button" onclick="runPythonScript('c')">Stop</button>
-		<button class="button" type="button" onclick="runPythonScript('b')">Backward</button>
 		
+		<button class="button" type="button" ontouchstart="forward()" ontouchend="stop(event)">Forward</button>
+		
+		<button class="button" type="button" ontouchstart="stop(event)" ontouchend="stop(event)">Stop</button>
+		<button class="button" type="button" ontouchstart="reverse()" ontouchend="stop(event)">Backward</button>
 	</body>
 </html>
